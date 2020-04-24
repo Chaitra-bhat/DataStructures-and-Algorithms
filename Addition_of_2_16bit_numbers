@@ -1,0 +1,21 @@
+;Author: Chaitra Bhat
+;Date: 11:44:00, 24-04-2020
+;Title: Addition of two 16 bit numbers
+;Target: NXP based LPC2148
+
+		AREA Program, CODE, READONLY
+		ENTRY
+Main 	
+		LDR R1, Value1	 ;Load 1st value to be added from memory to the register 1
+		LDR R2, Value2	 ;Load 2nd value to be added from memory to the register 2
+		ADD R1, R1, R2	 ;Add both the values in R1 and R2, and is stored in R1
+		STR R1, result	 ;Store the result back to the memory from register R1
+		
+		
+Value1 DCW &C121		;Define the value 1 in memory
+		ALIGN			;Aligns by every 32 bits in memory
+Value2	DCW &02AA		;Define the value 2 in memory
+		ALIGN			;Aligns by every 32 bits in memory
+result	DCW 0			;result value is initialized to zero
+		END	
+		
