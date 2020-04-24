@@ -1,0 +1,17 @@
+;Author: Chaitra Bhat
+;Date: 12:42:00, 24-04-2020
+;Title:16 bit data transfer
+;Target: NXP based LPC2148
+
+		AREA Program, CODE, READONLY
+		ENTRY
+Main 	
+		LDRB R1, Value	 ;Load value from memory to the register 1
+		STR R1, result	 ;Store the value from register 1 back to the memory
+		
+Value DCW &C121		;Define the value 1 in memory
+		ALIGN			;Aligns by every 32 bits in memory
+result	DCW 0			;result value is initialized to zero
+		END	
+		
+		
