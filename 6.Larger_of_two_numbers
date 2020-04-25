@@ -1,0 +1,24 @@
+;Author: Chaitra Bhat
+;Date: 04:20:42, 25-04-2020
+;Title:Find the larger of two numbers
+;Target: NXP based LPC2148
+
+		AREA Program, CODE, READONLY
+		ENTRY
+Main 	
+		LDR R1,Value1
+		LDR R2,Value2
+		CMP R1,R2
+		BHI Done
+		MOV R1,R2
+		
+Done			
+		STR R1,result
+		SWI &11
+		
+Value1 	DCD &FEDCA987		
+Value2 	DCD &12345678
+result	DCD 0			
+		END	
+		
+		
